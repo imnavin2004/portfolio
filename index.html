@@ -1,22 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charesh</title>
-    <link rel="shortcut icon" href="2998122_ecology_green_leaf_plant_spring_icon.png" type="image/x-icon">
-    <style>
-        *{
-            color:white;
-            background-color: black;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    .countdown {
+      font-size: 2em;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <h1>What is up NIGGER !!!</h1>
-    <p>An official portfolio website for our dear darkest friend Charesh Ramlal Guithel.</p>
-    <p>
-        Click here to continue: <input type="radio" > I identify myself as <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ style="color:blue;"> SLDC </a> Member.
-    </p>
+  <div class="countdown" id="countdown"></div>
+
+  <script>
+    // Set the date we're counting down to
+    var countdownDate = new Date();
+    countdownDate.setDate(countdownDate.getDate() + 50);
+
+    // Update the countdown every 1 second
+    var countdownFunction = setInterval(function() {
+      // Get today's date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the countdown date
+      var distance = countdownDate - now;
+
+      // Time calculations for days, hours, minutes, and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result in the element with id="countdown"
+      document.getElementById("countdown").innerHTML = days + "d " + hours + "h " +
+      minutes + "m " + seconds + "s ";
+
+      // If the countdown is finished, write some text
+      if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("countdown").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+  </script>
 </body>
 </html>
